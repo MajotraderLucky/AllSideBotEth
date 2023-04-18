@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"strconv"
 	"time"
@@ -210,4 +211,36 @@ func main() {
 
 	fmt.Println("Highest price   =", max)
 	fmt.Println("----------------------")
+
+	longFib236 := max - ((max - min) * 0.236)
+	fmt.Println("long Fibo 236 =", longFib236)
+	longFib382 := max - ((max - min) * 0.382)
+	fmt.Println("long Fibo 382 =", longFib382)
+	longFib500 := max - ((max - min) * 0.500)
+	fmt.Println("long Fibo 500 =", longFib500)
+	longFib618 := max - ((max - min) * 0.618)
+	fmt.Println("long Fibo 618 =", longFib618)
+	longFib786 := max - ((max - min) * 0.786)
+	fmt.Println("long Fibo 786 =", longFib786)
+	fmt.Println("----------------------")
+
+	shortFib236 := min + ((max - min) * 0.236)
+	fmt.Println("short Fibo 236 =", shortFib236)
+	shortFib382 := min + ((max - min) * 0.382)
+	fmt.Println("short Fibo 382 =", shortFib382)
+	shortFib500 := min + ((max - min) * 0.500)
+	fmt.Println("short Fibo 500 =", shortFib500)
+	shortFib618 := min + ((max - min) * 0.618)
+	fmt.Println("short Fibo 618 =", shortFib618)
+	shortFib786 := min + ((max - min) * 0.786)
+	fmt.Println("short Fibo 786 =", shortFib786)
+	fmt.Println("----------------------")
+
+	priceCorridor := max - min
+	fmt.Println("----------------------")
+	fmt.Println("Price corridor    =", priceCorridor)
+	priceCorridorPercent := ((max - min) / max) * 100
+	fmt.Print("Price corridor(%) = ", math.Round(priceCorridorPercent*100)/100, "%\n")
+	fmt.Println("----------------------")
+
 }

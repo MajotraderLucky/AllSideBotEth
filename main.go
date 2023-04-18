@@ -346,20 +346,16 @@ func main() {
 	}
 
 	upTrand := true
-	downTrand := false
 	priceBelow786LongFib := bidPriceFloat < longFib786
 	priceAbove786ShortFib := bidPriceFloat > shortFib786
 	if priceBelow786LongFib {
 		upTrand = false
-		downTrand = true
 	}
 
 	if priceAbove786ShortFib {
 		upTrand = true
-		downTrand = false
 	}
 	fmt.Println("Up trand =", upTrand)
-	fmt.Println("Down trand =", downTrand)
+	fmt.Println("Down trand =", !upTrand)
 	fmt.Println("----------------------")
-
 }
